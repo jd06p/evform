@@ -41,7 +41,7 @@ public abstract class Empleado {
 
     public String mostrarInfo(){
         return
-                "Nombre "+nombre+
+                        "Nombre "+nombre+
                         "ID "+idEmpleado+
                         "Telefono "+telefono+
                         "Activo "+activo+
