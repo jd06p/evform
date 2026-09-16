@@ -7,8 +7,8 @@ package org.example;
 public class EmpleadoAsalariado extends Empleado {
     private double sueldoMensual;
 
-    public EmpleadoAsalariado(String idEmpleado, String telefono, boolean activo, double salarioBase, double sueldoMensual){
-        super(idEmpleado, telefono, activo, salarioBase);
+    public EmpleadoAsalariado(String nombre, String idEmpleado, String telefono, boolean activo, double salarioBase, double sueldoMensual){
+        super(nombre, idEmpleado, telefono, activo, salarioBase);
         this.sueldoMensual = sueldoMensual;
     }
 
@@ -28,6 +28,11 @@ public class EmpleadoAsalariado extends Empleado {
     @Override
     public String obtenerRol(){
         return "Asalariado";
+    }
+
+    @Override
+    public String mostrarInfo(){
+        return super.mostrarInfo();
     }
 
 }

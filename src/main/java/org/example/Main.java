@@ -9,9 +9,9 @@ public class Main {
     public static void main(String[] args) {
 
         Empleado[]empleado={
-                new EmpleadoPorHoras("3123", "56956936660", true, 23091, 300, 10),
-                new EmpleadoAsalariado("36513", "+569321393", true, 300.000, 600.000),
-                new Gerente("43143", "+13021930", true, 500.000, "Duoc UC", 50.000)
+                new EmpleadoPorHoras("Pepe", "3123", "56956936660", true, 23091, 300, 10),
+                new EmpleadoAsalariado("Pedrito", "36513", "+569321393", true, 300.000, 600.000),
+                new Gerente("Pablo", "43143", "+13021930", true, 500.000, 900.000, "DuocUC", 30.000)
         };
         for(Empleado empleados:empleado){
             empleados.mostrarInfo();

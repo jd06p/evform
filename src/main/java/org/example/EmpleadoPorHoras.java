@@ -10,8 +10,8 @@ public class EmpleadoPorHoras extends Empleado{
     private int horasTrabajadas;
     private double valorHora;
 
-    public EmpleadoPorHoras(String idEmpleado, String telefono, boolean activo, double salarioBase, int horasTrabajadas, double valorHora) {
-        super(idEmpleado, telefono, activo, salarioBase);
+    public EmpleadoPorHoras(String nombre, String idEmpleado, String telefono, boolean activo, double salarioBase, int horasTrabajadas, double valorHora) {
+        super(nombre, idEmpleado, telefono, activo, salarioBase);
 
         this.horasTrabajadas = horasTrabajadas;
         this.valorHora=valorHora;
@@ -35,16 +35,19 @@ public class EmpleadoPorHoras extends Empleado{
 
     @Override
     public double calcularSalario(){
-        return 0;
+        return horasTrabajadas*valorHora;
     }
 
     @Override
     public String obtenerRol(){
-        return "Por Hora";
+        return "Por Horas";
     }
 
     @Override
-    public void mostrarInfo(){
+    public String mostrarInfo(){
+        return super.mostrarInfo()+
+                "Horas trabajadas: "+horasTrabajadas+
+                "Valor por hora: "+valorHora;
     }
 
 }

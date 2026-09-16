@@ -7,12 +7,14 @@ package org.example;
 //• protected double salarioBase
 
 public abstract class Empleado {
+    protected String nombre;
     protected String idEmpleado;
     protected String telefono;
     protected boolean activo;
     protected double salarioBase;
 
-    public Empleado(String idEmpleado, String telefono, boolean activo, double salarioBase) {
+    public Empleado(String nombre, String idEmpleado, String telefono, boolean activo, double salarioBase) {
+        this.nombre=nombre;
         this.idEmpleado = idEmpleado;
         this.telefono = telefono;
         this.activo = activo;
@@ -37,15 +39,19 @@ public abstract class Empleado {
         this.activo = false;
     }
 
-    public void mostrarInfo(){
-        System.out.println("ID: " + idEmpleado);
-        System.out.println("Telefono: " + telefono);
-        System.out.println("Activo: " + activo);
-        System.out.println("Salario: " + salarioBase);
+    public String mostrarInfo(){
+        return
+                "Nombre "+nombre+
+                        "ID "+idEmpleado+
+                        "Telefono "+telefono+
+                        "Activo "+activo+
+                        "Salario base "+calcularSalario();
     }
 
     public void asignarTelefono(String telefono){
-        this.telefono = telefono;
+        if(telefono != null && !telefono.isBlank()){
+            this.telefono = telefono;
+        }
     }
 
 }
